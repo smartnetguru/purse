@@ -69,6 +69,11 @@ stylus: {
 ##### purse/database.php
 This file provides a getPDOHandle() function which returns a PDO handle constructed from the `DB_` variables in the same file.
 
+## To-do
+* Handle various HTTP request types (e.g POST)
+* Send appropriate HTTP codes (e.g. 404) - suggested by James Robertson 
+* Use gulp.js instead of or in addition to Grunt — suggested by Miso Zmiric
+
 ## Credits
 
 Purse is lovingly built by [vladh](http://vladh.net) and [petrut](http://petrutoader.com) at [Phyramid](http://phyramid.com).
