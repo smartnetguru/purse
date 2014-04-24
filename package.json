@@ -1,10 +1,11 @@
 {
   "//": "Need to name your package? Replace it here",
-  "name": "Louis Vuitton",
+  "name": "Louis-Vuitton",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-stylus": "~0.11.0",
     "grunt-contrib-watch": "~0.5.3"
-  }
+  },
+  "private": true
 }
