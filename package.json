@@ -1,5 +1,6 @@
 {
-  "name": "your-package",
+  "//": "Need to name your package? Replace it here",
+  "name": "Louis Vuitton",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.2",
