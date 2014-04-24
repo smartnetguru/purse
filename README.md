@@ -70,8 +70,8 @@ stylus: {
 This file provides a getPDOHandle() function which returns a PDO handle constructed from the `DB_` variables in the same file.
 
 ## To-do
-* Handle various HTTP request types (e.g POST)
-* Send appropriate HTTP codes (e.g. 404) - suggested by James Robertson 
+* Handle various HTTP request types (e.g POST) — suggested by Lamin Sanneh
+* Send appropriate HTTP codes (e.g. 404) — suggested by James Robertson 
 * Use gulp.js instead of or in addition to Grunt — suggested by Miso Zmiric
 
 ## Credits
