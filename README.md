@@ -76,8 +76,13 @@ A comprehensive to-do list can be found on the [issues page](https://github.com/
 
 Purse is lovingly built by [vladh](http://vladh.net) and [petrut](http://petrutoader.com) at [Phyramid](http://phyramid.com).
 
-Additional thanks:
+#### Additional thanks
+
+##### People
+* [The contributors](https://github.com/Phyramid/purse/graphs/contributors)
+* [Rick Ross](http://www.godforgivesidont.com/)
+
+##### Libraries
 * [jade-php](https://github.com/ronan-gloo/jade-php)
 * [normalize.css](http://necolas.github.io/normalize.css/)
 * [prismjs](http://prismjs.com/)
-* [Rick Ross](http://www.godforgivesidont.com/)
