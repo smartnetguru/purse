@@ -27,7 +27,7 @@ Suggestions (including for new features) are very welcome. If you have any, open
 ### Routes
 Add routes in `public/index.php`.
 ```php
-$purse->action('/example', function(&$view) {
+$purse->get('/example', function(&$view) {
   $view = 'example';
 
   return array(
@@ -36,6 +36,25 @@ $purse->action('/example', function(&$view) {
 });
 ```
 You should specify the view you want to load (`$view`) and the variables you want to pass to it (`return array(...)`).
+
+Purse supports the four main HTTP methods: GET, POST, PUT, DELETE.
+```php
+$purse->get('/example', function(&$view) {
+$purse->post('/example', function(&$view) {
+$purse->put('/example', function(&$view) {
+$purse->delete('/example', function(&$view) {
+```
+
+For a 404 route, just make a route with '404' as the path.
+```php
+$purse->get('404', function(&$view) {
+  $view = 'example';
+
+  return array(
+    'baseURL' => BASE_URL
+  );
+});
+```
 
 ### MVC & Jade
 Views are in `views/`. `default.jade` is included by default as the main view/template which other views derive from. To add a new view, just create `views/example.jade`:
