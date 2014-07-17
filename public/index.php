@@ -6,7 +6,7 @@ require_once(path('purse/database.php'));
 
 $purse = new Purse();
 
-$purse->action('/', function(&$view) {
+$purse->get('/', function(&$view) {
   $view = 'index';
 
   return array(
@@ -14,7 +14,7 @@ $purse->action('/', function(&$view) {
   );
 });
 
-$purse->action('404', function(&$view) {
+$purse->get('404', function(&$view) {
   $view = '404';
 
   return array(

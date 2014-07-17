@@ -14,13 +14,16 @@ class Purse {
   private function getRouteFromUrl() {
     // The following code is adapted from the Slim framework (thank you!)
     if (strpos($_SERVER['REQUEST_URI'], $_SERVER['SCRIPT_NAME']) === 0) {
-      $scriptName = $_SERVER['SCRIPT_NAME']; //Without URL rewrite
+      // Without URL rewrite
+      $scriptName = $_SERVER['SCRIPT_NAME'];
     } else {
-      $scriptName = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']) ); //With URL rewrite
+      // With URL rewrite
+      $scriptName = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']) );
     }
     $pathInfo = substr_replace($_SERVER['REQUEST_URI'], '', 0, strlen($scriptName));
     if (strpos($pathInfo, '?') !== false) {
-      $pathInfo = substr_replace($pathInfo, '', strpos($pathInfo, '?')); //query string is not removed automatically
+      // Query string is not removed automatically
+      $pathInfo = substr_replace($pathInfo, '', strpos($pathInfo, '?'));
     }
     $scriptName = rtrim($scriptName, '/');
     $pathInfo = '/' . ltrim($pathInfo, '/');
@@ -35,11 +38,31 @@ class Purse {
     });
   }
 
-  public function action($path, \Closure $callback) {
+  public function get($path, \Closure $callback) {
+    return $this->action($path, 'GET', $callback);
+  }
+
+  public function post($path, \Closure $callback) {
+    return $this->action($path, 'POST', $callback);
+  }
+
+  public function put($path, \Closure $callback) {
+    return $this->action($path, 'PUT', $callback);
+  }
+
+  public function delete($path, \Closure $callback) {
+    return $this->action($path, 'DELETE', $callback);
+  }
+
+  private function action($path, $method, \Closure $callback) {
     $jade = new Jade\Jade;
     $vars = $callback($view) ?: [];
 
-    if (($path == $this->route || $path == '404') && !$this->matchedRoute) {
+    if (
+      !$this->matchedRoute &&
+      $method == $_SERVER['REQUEST_METHOD'] &&
+      ($path == $this->route || $path == '404')
+    ) {
       $this->matchedRoute = true;
       
       if ($path == '404') {
