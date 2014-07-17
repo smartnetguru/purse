@@ -43,7 +43,7 @@ Views are in `views/`. `default.jade` is included by default as the main view/te
 extends default
 
 block content
-  #content.grid
+  .content.grid
     p Hi. Your content goes here.
 
 block scripts
