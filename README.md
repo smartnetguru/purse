@@ -11,7 +11,7 @@ Purse is a modern web framework for PHP inspired by Sinatra. It has several majo
 * Jade
 * Stylus
 
-It aims to make developing web applications with PHP (using modern, clean paradigms) as easy as in Ruby or NodeJS. Purse was initially developed for internal use at [Phyramid](http://phyramid.com).
+It aims to make developing web applications with PHP (using modern, clean paradigms) as easy as in Ruby or Node.js. Purse was initially developed for internal use at [Phyramid](http://phyramid.com).
 
 Suggestions (including for new features) are very welcome. If you have any, open an issue or contact me.
 
