@@ -2,10 +2,10 @@
   "//": "Need to name your package? Replace it here",
   "name": "Louis-Vuitton",
   "version": "1.0.0",
+  "private": true,
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-stylus": "~0.11.0",
-    "grunt-contrib-watch": "~0.5.3"
-  },
-  "private": true
+    "gulp": "^3.8.6",
+    "gulp-stylus": "^1.0.5",
+    "nib": "^1.0.3"
+  }
 }
