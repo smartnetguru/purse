@@ -45,7 +45,7 @@ $purse->put('/example', function(&$view) {
 $purse->delete('/example', function(&$view) {
 ```
 
-For a 404 route, just make a route with '404' as the path.
+For a 404 route, just make a route with '404' as the path. Make sure you write it last, though, because if you don't, it will match first and disregard all routes after it.
 ```php
 $purse->get('404', function(&$view) {
   $view = 'example';
