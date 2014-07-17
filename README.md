@@ -10,7 +10,6 @@ Purse is a modern web framework for PHP inspired by Sinatra. It has several majo
 * MVC
 * Jade
 * Stylus
-* Grunt (with live updating)
 
 It aims to make developing web applications with PHP (using modern, clean paradigms) as easy as in Ruby or NodeJS. Purse was initially developed for internal use at [Phyramid](http://phyramid.com).
 
@@ -19,7 +18,7 @@ Suggestions (including for new features) are very welcome. If you have any, open
 ## Installation
 * `git clone https://github.com/vladh/purse`
 * `cd purse`
-* `npm install -g grunt-cli`
+* `npm install -g gulp`
 * `npm install`
 * Set your webserver to serve `purse/public`
 
@@ -51,19 +50,8 @@ block scripts
   script(type="text/javascript", src="js/example.js")
 ```
 
-### Stylus & Grunt
-Stylus files are in `views/stylus/`. To compile these files, run `grunt watch`. By default, `views/stylus/screen.styl` compiles into `public/stylesheets/screen.css`. You can add more stylesheets in `Gruntfile.js`:
-```javascript
-stylus: {
-  compile: {
-    options: {
-    },
-    files: {
-      'public/stylesheets/example.css': ['views/stylus/example.styl']
-    }
-  }
-},
-```
+### Stylus & Gulp
+Stylus files are in `views/stylus/`. To compile these files and watch for changes, run `gulp`. Any stylesheets you add into `views/stylus/` are compiled automagically into `public/stylesheets/`.
 
 ### Additional files
 ##### purse/database.php
