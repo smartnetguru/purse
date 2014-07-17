@@ -13,3 +13,11 @@ $purse->action('/', function(&$view) {
     'baseURL' => BASE_URL
   );
 });
+
+$purse->action('404', function(&$view) {
+  $view = '404';
+
+  return array(
+    'baseURL' => BASE_URL
+  );
+});

@@ -5,9 +5,11 @@ require_once(path('purse/database.php'));
 
 class Purse {
   private $route;
+  private $matchedRoute;
   public function __construct() {
     $this->route = $this->getRouteFromUrl();
     $this->registerJade();
+    $this->matchedRoute = false;
   }
   private function getRouteFromUrl() {
     // The following code is adapted from the Slim framework (thank you!)
@@ -34,10 +36,17 @@ class Purse {
   }
 
   public function action($path, \Closure $callback) {
-    if ($path == $this->route) {
-      $jade = new Jade\Jade;
-      $vars = $callback($path) ?: [];
-      $jade->render(path($GLOBALS['paths']['views'] . '/' . $path . '.jade'), $vars);
+    $jade = new Jade\Jade;
+    $vars = $callback($view) ?: [];
+
+    if (($path == $this->route || $path == '404') && !$this->matchedRoute) {
+      $this->matchedRoute = true;
+      
+      if ($path == '404') {
+        header('HTTP/1.0 404 Not Found');
+      }
+
+      $jade->render(path($GLOBALS['paths']['views'] . '/' . $view . '.jade'), $vars);
     }
   }
 }
