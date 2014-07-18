@@ -93,7 +93,21 @@ cd purse && npm install
             <p>You should specify the view in
             <code class="language-php">$view</code> and the variables you want
             to pass to it in
-            <code class="language-php">return array(...)</code>.</p>
+            <code class="language-php">return array(...)</code>.
+            Purse supports the four main HTTP methods: GET, POST, PUT, DELETE.
+            <pre><code class="language-php">$purse->get('/example', function(&$view) {};
+$purse->post('/example', function(&$view) {};
+$purse->put('/example', function(&$view) {};
+$purse->delete('/example', function(&$view) {};</code></pre>
+            For a 404 route, just make a route with '404' as the path. Make sure you write it last,
+            though, because if you don't, it will match first and disregard all routes after it.
+            <pre><code class="language-php">$purse->get('404', function(&$view) {
+  $view = 'example';
+
+  return array(
+    'baseURL' => BASE_URL
+  );
+});</code></pre></p>
           </div>
         </section>
 
