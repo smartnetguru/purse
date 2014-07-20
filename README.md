@@ -7,6 +7,7 @@
 
 Purse is a modern web framework for PHP inspired by Sinatra. It has several major features:
 * Routes
+* Environments
 * MVC
 * Jade
 * Stylus
@@ -73,6 +74,32 @@ block scripts
 
 ### Stylus & Gulp
 Stylus files are in `app/stylus/`. To compile these files and watch for changes, run `gulp`. Any stylesheets you add into `app/stylus/` are compiled automagically into `public/stylesheets/`.
+
+### Environments
+Environments allow you to define per-host information, such as base URLs and debug information. Here's an example environment:
+
+```php
+'venus' => array(
+  'baseURL' => '/projects/purse'
+  'debug' => true
+)
+```
+
+This is mainly for development purposes and ensures that every host running the app both has the proper URL path (so that resources don't break if you're running on a more complex path, or a path that isn't "/") and either displays errors or doesn't (and any other debug stuff you may require) as needed.
+
+Environments are optional, and you define them when instantiating Purse in public/index.php:
+
+```php
+$purse = new Purse\Purse(array(
+  'paths' => require(__DIR__ . '/../paths.php'),
+  'environments' => array(
+    'your-hostname' => array(
+      'baseURL' => 'your-url',
+      'debug' => true
+    )
+  )
+));
+```
 
 ### Additional classes
 ##### Database
