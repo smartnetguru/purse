@@ -16,8 +16,10 @@ It aims to make developing web applications with PHP (using modern, clean paradi
 Suggestions (including for new features) are very welcome. If you have any, open an issue or contact me.
 
 ## Installation
-* `git clone https://github.com/vladh/purse`
+The installation process requires [Composer](https://getcomposer.org/).
+* `git clone https://github.com/Phyramid/purse`
 * `cd purse`
+* `composer install`
 * `npm install -g gulp`
 * `npm install`
 * Set your webserver to serve `purse/public`
@@ -57,7 +59,7 @@ $purse->get('404', function(&$view) {
 ```
 
 ### MVC & Jade
-Views are in `views/`. `default.jade` is included by default as the main view/template which other views derive from. To add a new view, just create `views/example.jade`:
+Views are in `app/views/`. `default.jade` is included by default as the main view/template which other views derive from. To add a new view, just create `app/views/example.jade`:
 ```jade
 extends default
 
@@ -70,11 +72,11 @@ block scripts
 ```
 
 ### Stylus & Gulp
-Stylus files are in `views/stylus/`. To compile these files and watch for changes, run `gulp`. Any stylesheets you add into `views/stylus/` are compiled automagically into `public/stylesheets/`.
+Stylus files are in `app/stylus/`. To compile these files and watch for changes, run `gulp`. Any stylesheets you add into `app/stylus/` are compiled automagically into `public/stylesheets/`.
 
-### Additional files
-##### purse/database.php
-This file provides a getPDOHandle() function which returns a PDO handle constructed from the `DB_` variables in the same file.
+### Additional classes
+##### Database
+This class provides a getPDOHandle() method which returns a PDO handle constructed from the given parameters (hostname, database, username and password).
 
 ## To-do / roadmap
 A comprehensive to-do list can be found on the [issues page](https://github.com/Phyramid/purse/issues). A roadmap will be added if needed, but there are too few issues for now.
@@ -87,6 +89,7 @@ Purse is lovingly built by [vladh](http://vladh.net) and [petrut](http://petruto
 
 ##### People
 * [The contributors](https://github.com/Phyramid/purse/graphs/contributors)
+* [/r/php](http://reddit.com/r/php)
 * [Rick Ross](http://www.godforgivesidont.com/)
 
 ##### Libraries
