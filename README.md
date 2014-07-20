@@ -11,7 +11,7 @@ Purse is a modern web framework for PHP inspired by Sinatra. It has several majo
 * Jade
 * Stylus
 
-It aims to make developing web applications with PHP (using modern, clean paradigms) as easy as in Ruby or NodeJS. Purse was initially developed for internal use at [Phyramid](http://phyramid.com).
+It aims to make developing web applications with PHP (using modern, clean paradigms) as easy as in Ruby or Node.js. Purse was initially developed for internal use at [Phyramid](http://phyramid.com).
 
 Suggestions (including for new features) are very welcome. If you have any, open an issue or contact me.
 
@@ -45,7 +45,7 @@ $purse->put('/example', function(&$view) {
 $purse->delete('/example', function(&$view) {
 ```
 
-For a 404 route, just make a route with '404' as the path.
+For a 404 route, just make a route with '404' as the path. Make sure you write it last, though, because if you don't, it will match first and disregard all routes after it.
 ```php
 $purse->get('404', function(&$view) {
   $view = 'example';
