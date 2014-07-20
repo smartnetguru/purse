@@ -1,0 +1,33 @@
+{
+  "name": "phyramid/purse",
+  "description": "A modern web framework for PHP inspired by Sinatra.",
+  "keywords": ["framework", "sinatra", "web"],
+  "homepage": "http://phyramid.github.io/purse/",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vlad-Ștefan Harbuz",
+      "email": "vlad@phyramid.com",
+      "homepage": "http://vladh.net",
+      "role": "Developer"
+    },
+    {
+      "name": "Petru-Sebastian Toader",
+      "email": "petru@phyramid.com",
+      "homepage": "http://petrutoader.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "phyramid/purse-core": "*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Phyramid/purse-core"
+    }
+  ],
+  "minimum-stability": "dev"
+}
